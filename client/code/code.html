@@ -1,0 +1,36 @@
+<template name="code">
+  <div class="ui container">
+    <div class="ui basic padded segment">
+      <h1 class="ui center aligned header">FBB Oauth Demo</h1>
+    </div>
+    <div class="ui grid">
+      <div class="ui row">
+        <div class="center aligned column">
+          <a href="/">go back</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui padded segment">
+      <div class="ui grid">
+        <div class="ui row">
+          <div class="center aligned column">
+            <h3 class="ui header">Your token is:</h3>
+            <textarea>{{token}}</textarea>
+          </div>
+        </div>
+        <div class="ui row">
+          <div class="center aligned column">
+            {{#each msg in messages}}
+              <div>{{{msg}}}</div>
+            {{/each}}
+          </div>
+        </div>
+        <div class="ui row">
+          <div class="center aligned column">
+            <a class="js-privateapi" href="">/private</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

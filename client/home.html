@@ -1,0 +1,36 @@
+<head>
+  <title>app-fbb-oauthdemo</title>
+</head>
+
+<template name="home">
+  <div class="ui container">
+    <div class="ui basic padded segment">
+      <h1 class="ui center aligned header">FBB Oauth Demo</h1>
+    </div>
+    <div class="ui padded segment">
+      <div class="ui grid">
+        <div class="ui row">
+          <div class="center aligned column">
+            <a class="js-privateapi" href="">/private</a>
+          </div>
+        </div>
+        <div class="ui row">
+          <div class="center aligned column">
+            {{> signinButton}}
+          </div>
+        </div>
+        <div class="ui row">
+          <div class="center aligned column">
+            {{#each msg in messages}}
+              <div>{{{msg}}}</div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="signinButton">
+  <div class="ui js-signin button g-signin2" data-onsuccess="onSignIn">Sign in with Google</div>
+</template>
