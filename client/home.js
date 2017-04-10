@@ -7,12 +7,13 @@ import './home.html';
 Router.route('/', function () {
   this.render('home');
 });
-
 // Some global vars
-hostname = 'https://tantalumcorporation-test.apigee.net';
-rootpath = 'reference-oauth-2';
-clientId = '2M9nd7EuA93QkfdC1lXxZA11HpmtADrw';
-privateEndpoint = 'https://tantalumcorporation-test.apigee.net/reference-api/swagger-ui.html'
+hostname = 'https://tantaluminnovation-dev.apigee.net';
+rootpath = 'oauth2';
+// clientId = '9Cdah6DdfvtG9KxDJgs2mgyb5efucIrB'; // TEST
+clientId = 'V5KmOCQ50c22XpEvmkWGGaTahA2R8ud9'; // DEV
+// clientSecret = 'AtKUhnoNbxdSvITw';
+privateEndpoint = 'https://tantaluminnovation-dev.apigee.net/api/swagger-ui.html';
 
 Session.set('messages', []); // global
 
@@ -64,6 +65,6 @@ Template.home.events({
 
 Template.signinButton.events({
   'click .js-signin': function() {
-    window.location.replace(`${hostname}/${rootpath}/auth?redirect_uri=${redirect_uri}`);
+    window.location.replace(`${hostname}/${rootpath}/auth?redirect_uri=${redirect_uri}&client_id=${clientId}&prompt=consent&access_type=offline`);
   },
 });
